@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".ShowCaptureActivity">
+
+    <ImageView
+        android:id="@+id/imageCaptured"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Captured Image"
+        android:scaleType="fitXY" />
+
+    <Button
+        android:id="@+id/send_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="44dp"
+        android:layout_marginEnd="160dp"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="160dp"
+        android:text="Send" />
+
+
+</FrameLayout>

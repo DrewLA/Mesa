@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="primary_material_dark_1">#b2212121</color>
+    <color name="mesa_accents">#ccee6b1f</color>
+    <color name="mesa_status_bar">#a7ee7c1f</color>
+</resources>

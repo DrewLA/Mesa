@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "212696124749",
+    "firebase_url": "https://mesa-8edbe.firebaseio.com",
+    "project_id": "mesa-8edbe",
+    "storage_bucket": "mesa-8edbe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:212696124749:android:5a17812e2ff9face",
+        "android_client_info": {
+          "package_name": "com.nimo.lewis.mesa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "212696124749-2dv6psjf9h5sqn1joqo0a8n342bbq008.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nimo.lewis.mesa",
+            "certificate_hash": "f8934f576da83ab625184192439427e30245e388"
+          }
+        },
+        {
+          "client_id": "212696124749-4g8v17i4h0cnbugghgd1ct8he87o9dks.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcAR5gwtAuj1eoU12BRmvVDNryva_hAVc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "212696124749-4g8v17i4h0cnbugghgd1ct8he87o9dks.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
