@@ -72,16 +72,12 @@ public class RegistrationActivity extends AppCompatActivity {
                         //Link USer and USer Database
                         else{
                             String userId = mAuth.getCurrentUser().getUid();
+                            User user = new User(name, email, userId);
+                            DatabaseReference userdb = FirebaseDatabase.getInstance().getReference();
+                            //String key = userdb.child("users").getKey();
 
-                            DatabaseReference userdb = FirebaseDatabase.getInstance().getReference().child("users").child(userId);
+                            userdb.child("users").child(userId).setValue(user);
 
-                            Map userinfo = new HashMap<>();
-                            userinfo.put("name", name);
-                            userinfo.put("email", email);
-                            userinfo.put("location", "default");
-                            userinfo.put("reports", "default");
-
-                            userdb.updateChildren(userinfo);
                             Intent intent = new Intent(getApplication(), MainActivity.class);
                             Toast.makeText(RegistrationActivity.this, "Success", Toast.LENGTH_LONG).show();
                             startActivity(intent);

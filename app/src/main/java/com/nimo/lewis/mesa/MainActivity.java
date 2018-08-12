@@ -1,5 +1,6 @@
 package com.nimo.lewis.mesa;
 
+import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
@@ -19,6 +20,8 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainActivity extends AppCompatActivity {
 
     /**
@@ -36,15 +39,22 @@ public class MainActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        //Done
 
-        //CameraFragment prev = new CameraFragment();
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        if (mAuth.getCurrentUser() == null) {
+            Intent intent = new Intent(getApplication(), LogInActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+            finish();
+            return;
+        }else {
+            setContentView(R.layout.activity_main);
+            ViewPager viewPager = findViewById(R.id.viewpager);
+            adapterViewPager = new MyViewPagerAdapter(getSupportFragmentManager());
+            viewPager.setAdapter(adapterViewPager);
+            viewPager.setCurrentItem(1);
+        }
 
-        ViewPager viewPager = findViewById(R.id.viewpager);
-        adapterViewPager = new MyViewPagerAdapter(getSupportFragmentManager());
-        viewPager.setAdapter(adapterViewPager);
-        viewPager.setCurrentItem(1);
         /*FragmentManager fm = getSupportFragmentManager();
         fm.beginTransaction().add(R.id.camera_page, prev).commit();*/
 
@@ -61,9 +71,9 @@ public class MainActivity extends AppCompatActivity {
         public Fragment getItem(int i) {
             switch (i){
                 case 0:
-                    return CameraFragment.newInstance();
-                case 1:
                     return ReportsFragment.newInstance();
+                case 1:
+                    return CameraFragment.newInstance();
                 case 2:
                     return GeoFragment.newInstance();
 
